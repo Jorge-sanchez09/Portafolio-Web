@@ -1,20 +1,17 @@
 :root{
-    --clr-primary: hsl(214, 92%, 38%);
-    --dark-gray: hsl(0, 0%, 13%);
+    --clr-primary: hsl(214, 92%, 38%);   /*Color primario, con este color resaltamos lo importante*/
+    --dark-gray: hsl(0, 0%, 13%);        
+    ---very-dark-gray: hsl(0, 0%, 10%);
     --very-dark-blue: hsl(220, 12%, 9%);
-    --wrapper-width: 1600px;
+    --wrapper-width: 1600px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
 }
 
 body {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;  /*header main footer, tanto el header como el footer ocuparán solo su contenido + el padding si es que tiene, y el main abarcará el resto del espacio*/
     min-height: 100vh;
     font-family: sans-serif;
     background-color: var(--very-dark-blue);
-}
-
-.header{
-    background-color: var(--dark-gray);
 }
 
 .header-wrapper{
@@ -24,10 +21,13 @@ body {
 }
 
 .toggle-menu{
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
+    background-color: var(--dark-gray);
 }
 
 .icon{
@@ -54,6 +54,7 @@ body {
     margin: 0;
     padding: 0;
     transform: translateY(-100%);
+    background-color: var(---very-dark-gray);
 }
 
 .menu-list--show{
@@ -76,6 +77,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+    .header{
+        background-color: var(--dark-gray);
+    }
+
     .toggle-menu{
         padding: 0;
     }
@@ -84,6 +89,7 @@ body {
         position: initial;
         flex-direction: row;
         transform: translateY(0);
+        background-color: initial;
     }
 
     .toggle-button{
