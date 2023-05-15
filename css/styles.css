@@ -1,8 +1,9 @@
 :root{
     --clr-primary: hsl(214, 92%, 38%);   /*Color primario, con este color resaltamos lo importante*/
-    --dark-gray: hsl(0, 0%, 13%);        
-    ---very-dark-gray: hsl(0, 0%, 10%);
+    --clr-neutral:  hsl(0, 0%, 13%); 
+    --clr-neutral-500: hsl(0, 0%, 10%);
     --very-dark-blue: hsl(220, 12%, 9%);
+    --clr-white: hsl(0, 0%, 100%);
     --wrapper-width: 1600px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
 }
 
@@ -10,7 +11,8 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;  /*header main footer, tanto el header como el footer ocuparán solo su contenido + el padding si es que tiene, y el main abarcará el resto del espacio*/
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
+    color: var(--clr-white);
     background-color: var(--very-dark-blue);
 }
 
@@ -27,7 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    background-color: var(--dark-gray);
+    background-color: var(--clr-neutral);
 }
 
 .icon{
@@ -54,7 +56,7 @@ body {
     margin: 0;
     padding: 0;
     transform: translateY(-100%);
-    background-color: var(---very-dark-gray);
+    background-color: var(--clr-neutral-500);
 }
 
 .menu-list--show{
@@ -76,9 +78,13 @@ body {
     background-color: var(--clr-primary);
 }
 
+.footer{
+    background-color: var(--clr-neutral);
+}
+
 @media screen and (min-width: 768px) {
     .header{
-        background-color: var(--dark-gray);
+        background-color: var(--clr-neutral);
     }
 
     .toggle-menu{
