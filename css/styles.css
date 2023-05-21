@@ -24,16 +24,19 @@
 
 :root{
     --clr-primary: hsl(214, 92%, 38%);   /*Color primario, con este color resaltamos lo importante*/
-    --clr-neutral:  hsl(0, 0%, 13%); 
-    --clr-neutral-500: hsl(0, 0%, 10%);
+    --clr-primary-500: hsl(214, 92%, 28%);
+
+    --clr-neutral-800:  hsl(0, 0%, 13%); 
+    --clr-neutral-900: hsl(0, 0%, 10%);
+    --clr-neutral-200: hsl(0, 0%, 80%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
     --clr-body: hsl(220, 12%, 9%);
-    --clr-white: hsl(0, 0%, 100%);
 
     --fw-regular: 400;
     --fw-light: 300;
     --fw-bold: 700;
     --fw-black: 900;
-    --wrapper-width: 1600px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
+    --content-width: 1500px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
 }
 
 body {
@@ -42,7 +45,7 @@ body {
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
     font-weight: var(--fw-regular);
-    color: var(--clr-white);
+    color: var(--clr-neutral-100);
     background-color: var(--clr-body);
 }
 
@@ -50,7 +53,7 @@ body {
 .header-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .toggle-menu{
@@ -60,7 +63,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    background-color: var(--clr-neutral);
+    background-color: var(--clr-neutral-800);
 }
 
 .icon{
@@ -87,7 +90,7 @@ body {
     margin: 0;
     padding: 0;
     transform: translateY(-100%);
-    background-color: var(--clr-neutral-500);
+    background-color: var(--clr-neutral-900);
 }
 
 /* Esta clase es la que se le coloca al menu cuando damos click al boton de toggle, regresa su position a la original y lo desplazamos a su lugar inicial con una transición */
@@ -102,7 +105,7 @@ body {
     padding: 1em;
     text-decoration: none;
     text-align: center;
-    color: var(--clr-white);
+    color: var(--clr-neutral-100);
 }
 
 .menu-list__link:hover, 
@@ -110,19 +113,104 @@ body {
     background-color: var(--clr-primary);
 }
 
-.footer{
-    background-color: var(--clr-neutral);
+.section-wrapper{
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
 }
 
+.hero{
+    position: relative;
+}
 
-@media screen and (min-width: 768px) {
+.hero__bg-image{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__flex-group{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.hero__content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.hero__message{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0.5em;
+    font-weight: 700;
+    background-color: var(--clr-primary-500);
+    border-radius: 0.2em;
+}
+
+h1{
+    font-weight: var(--fw-black);
+}
+
+h1, .hero__subtitle{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.hero__subtitle{
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary);
+}
+
+.hero__subtitle span:first-child{
+    color: var(--clr-neutral-100);
+}
+
+.hero__subtitle span:last-child{
+    display: block;
+}
+
+.hero__text{
+    margin: 0;
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--clr-neutral-200);
+}
+
+.button{
+    display: inline-block;
+    margin: 20px auto 75px;
+    padding: 1em;
+    text-decoration: none;
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+}
+
+.logo-container{
+    max-width: 400px;
+    border-radius: 50%;
+    border: 5px solid var(--clr-primary);
+    overflow: hidden;
+}
+
+.footer{
+    background-color: var(--clr-neutral-800);
+}
+
+@media screen and (min-width: 830px) {
     /* Al estar en una pantalla mas grande, el bg-color se lo damos al header ya que si se lo damos an mobile-first el color se queda en el espacio del menu y se ve raro, y una vez que la pantalla ya es mas grande para tener los links y el logo en la misma fila ya se lo asignamos o si no el bg-color solo lo tendria el logo*/
     .header{
-        background-color: var(--clr-neutral);
+        background-color: var(--clr-neutral-800);
     }
 
     .toggle-menu{
-        padding: 0;
+        padding: 0 2em;
     }
     /* Hacemos que el menu ahora tenga flex-direction: row y no esté desplazado*/
     .menu-list{
@@ -137,9 +225,22 @@ body {
     }
 
     .header-wrapper{
-        max-width: var(--wrapper-width);    /*Tamaño para el contenido del header*/
+        max-width: var(--content-width);    /*Tamaño para el contenido del header*/
         margin-left: auto;
         margin-right: auto;
         flex-direction: row;
     }
+
+    .hero__flex-group{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1, .hero__subtitle{
+        font-size: 2.5rem;
+    }
+
+    .button{
+        margin: 0;
+    }
+    
 }

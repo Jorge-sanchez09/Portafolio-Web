@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c2cbff3071.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css">
     <title>Portafolio</title>
   </head>
   <body>
@@ -38,7 +38,33 @@
         </div>
     </header>
     <main>
-        <h1>Jorge Humberto Sánchez Quiñones</h1>
+        <section class="hero">
+            <picture>
+                <source srcset="assets/images/banner.jpg" media="(min-width: 830px)" class="hero__bg-image">
+                <img src="assets/images/banner-mobile.jpg" alt="Background Banner" class="hero__bg-image">
+            </picture>
+            <div class="section-wrapper">
+                <div class="hero__flex-group">
+                    <div class="hero__content">
+                        <div class="hero__group">
+                            <p class="hero__message">Bienvenido, soy</p>
+                            <h1>Jorge Humberto Sánchez Quiñones</h1>
+                            <h2 class="hero__subtitle">
+                               Programador de videojuegos 
+                               <span>y </span> 
+                               <span>Desarrollador web</span> 
+                            </h2>
+                        </div>      
+                        <p class="hero__text">Me dedico a crear experiencias digitales, principalmente videojuegos y páginas web</p>
+                        <a class="button" href="#">Descargar CV</a>
+                    </div>
+                    <div class="logo-container">
+                        <img src="assets/images/logo-krio.webp" alt="Kriosaber logo" class="hero__logo">
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <p>Pie de página</p>
