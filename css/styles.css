@@ -36,10 +36,17 @@
     --fw-light: 300;
     --fw-bold: 700;
     --fw-black: 900;
-    --content-width: 1500px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
+    --content-width: 1600px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
+    --scroll-padding: 
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 50px);
 }
 
 body {
+    position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto;  /*header main footer, tanto el header como el footer ocuparán solo su contenido + el padding si es que tiene, y el main abarcará el resto del espacio*/
     min-height: 100vh;
@@ -47,6 +54,14 @@ body {
     font-weight: var(--fw-regular);
     color: var(--clr-neutral-100);
     background-color: var(--clr-body);
+}
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 /* Este elemento tiene como hijos directos el div con el toggle (menu desplegable) y la barra de navegación. Al ser mobile-first el navbar está oculto por lo que la columna del toggle abarcará todo el espacio */
@@ -111,6 +126,10 @@ body {
 .menu-list__link:hover, 
 .menu-list__link:focus{
     background-color: var(--clr-primary);
+}
+
+main{
+    padding-top: 72px;
 }
 
 .section-wrapper{
@@ -199,6 +218,10 @@ h1, .hero__subtitle{
     overflow: hidden;
 }
 
+.relleno{
+    font-size: 25px;
+}
+
 .footer{
     background-color: var(--clr-neutral-800);
 }
@@ -229,6 +252,10 @@ h1, .hero__subtitle{
         margin-left: auto;
         margin-right: auto;
         flex-direction: row;
+    }
+
+    main{
+        padding-top: 50px;
     }
 
     .hero__flex-group{
