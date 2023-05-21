@@ -1,9 +1,38 @@
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    src: url('../assets/fonts/Inter-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    src: url('../assets/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 900;
+    src: url('../assets/fonts/Inter-Black.woff2') format('woff2');
+}
+
 :root{
     --clr-primary: hsl(214, 92%, 38%);   /*Color primario, con este color resaltamos lo importante*/
     --clr-neutral:  hsl(0, 0%, 13%); 
     --clr-neutral-500: hsl(0, 0%, 10%);
-    --very-dark-blue: hsl(220, 12%, 9%);
+    --clr-body: hsl(220, 12%, 9%);
     --clr-white: hsl(0, 0%, 100%);
+
+    --fw-regular: 400;
+    --fw-light: 300;
+    --fw-bold: 700;
+    --fw-black: 900;
     --wrapper-width: 1600px;    /*Tamaño de los contenedores, para que todo el contenido de la pagina abarque hasta cierto punto*/
 }
 
@@ -11,11 +40,13 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;  /*header main footer, tanto el header como el footer ocuparán solo su contenido + el padding si es que tiene, y el main abarcará el resto del espacio*/
     min-height: 100vh;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: var(--fw-regular);
     color: var(--clr-white);
-    background-color: var(--very-dark-blue);
+    background-color: var(--clr-body);
 }
 
+/* Este elemento tiene como hijos directos el div con el toggle (menu desplegable) y la barra de navegación. Al ser mobile-first el navbar está oculto por lo que la columna del toggle abarcará todo el espacio */
 .header-wrapper{
     display: flex;
     flex-direction: column;
@@ -33,7 +64,7 @@ body {
 }
 
 .icon{
-    color: white;
+    color: var(--clr-white);
 }
 
 .toggle-button{
@@ -47,9 +78,9 @@ body {
     border: 2px solid var(--clr-primary);
 }
 
+/* Este es el ul del menu, con transform lo movemos hacia arriba para que esté oculto y el flex-direction empieza en column. Tiene que tener además position absolute para que no abarque espacio ya que aunque lo movamos con transform sigue teniendo su espacio reservado, pero con absolute lo quitamos*/
 .menu-list{
     position: absolute;
-    z-index: -1;
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -59,6 +90,7 @@ body {
     background-color: var(--clr-neutral-500);
 }
 
+/* Esta clase es la que se le coloca al menu cuando damos click al boton de toggle, regresa su position a la original y lo desplazamos a su lugar inicial con una transición */
 .menu-list--show{
     position: initial;
     transform: translateY(0);
@@ -70,7 +102,7 @@ body {
     padding: 1em;
     text-decoration: none;
     text-align: center;
-    color: white;
+    color: var(--clr-white);
 }
 
 .menu-list__link:hover, 
@@ -82,7 +114,9 @@ body {
     background-color: var(--clr-neutral);
 }
 
+
 @media screen and (min-width: 768px) {
+    /* Al estar en una pantalla mas grande, el bg-color se lo damos al header ya que si se lo damos an mobile-first el color se queda en el espacio del menu y se ve raro, y una vez que la pantalla ya es mas grande para tener los links y el logo en la misma fila ya se lo asignamos o si no el bg-color solo lo tendria el logo*/
     .header{
         background-color: var(--clr-neutral);
     }
@@ -90,20 +124,20 @@ body {
     .toggle-menu{
         padding: 0;
     }
-
+    /* Hacemos que el menu ahora tenga flex-direction: row y no esté desplazado*/
     .menu-list{
         position: initial;
         flex-direction: row;
         transform: translateY(0);
-        background-color: initial;
+        background-color: initial;  /* Ya que como el menu en sí tenía un color diferente del header, al pasar a escritorio tenemos que hacer que tenga todo un solo color, asi que con initial se lo quitamos*/
     }
 
     .toggle-button{
-        display: none;
+        display: none;  /* Ocultamos el boton de toggle*/
     }
 
     .header-wrapper{
-        max-width: var(--wrapper-width);
+        max-width: var(--wrapper-width);    /*Tamaño para el contenido del header*/
         margin-left: auto;
         margin-right: auto;
         flex-direction: row;
