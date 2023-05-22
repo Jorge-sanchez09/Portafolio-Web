@@ -268,7 +268,7 @@ h1, .hero__subtitle{
     left: -25px;
     width: calc(100% + 50px);
     border: 10px solid;
-    border-color:  transparent transparent var(--clr-primary);
+    border-color:  var(--clr-primary) var(--clr-primary) transparent transparent;
     animation: 2s linear reverse infinite preloader;
 }
 
