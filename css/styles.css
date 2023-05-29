@@ -281,9 +281,13 @@ h1, .hero__subtitle{
     }
 }
 
-
 .relleno{
     font-size: 25px;
+}
+
+/* Borrar */
+h2{
+    color: var(--clr-primary);
 }
 
 .footer{
