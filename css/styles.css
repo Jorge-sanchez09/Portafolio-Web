@@ -456,6 +456,7 @@ h2{
     .menu-list{
         position: initial;
         flex-direction: row;
+        padding-right: 2em;
         transform: translateY(0);
         background-color: initial;  /* Ya que como el menu en sí tenía un color diferente del header, al pasar a escritorio tenemos que hacer que tenga todo un solo color, asi que con initial se lo quitamos*/
     }
