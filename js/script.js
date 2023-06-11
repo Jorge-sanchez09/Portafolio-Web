@@ -7,7 +7,7 @@ toggleMenuElement.addEventListener('click', ()=>{
     mainMenuElement.classList.toggle('menu-list--show');
 });
 
-document.documentElement.style.setProperty('--scroll-padding', navigationHeight + 1 + "px");
+document.documentElement.style.setProperty('--scroll-padding', navigationHeight + "px");
 
 for(const project of projects){
     project.addEventListener('click', (e) => 
