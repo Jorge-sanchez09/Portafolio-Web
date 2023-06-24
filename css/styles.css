@@ -331,7 +331,7 @@ h1, .hero__subtitle{
 }
 
 .project__header:hover .project__image-container{
-    box-shadow: inset 0 0 5px 10px var(--clr-primary) ;
+    box-shadow: inset 0 0 5px 10px var(--clr-primary);
 }
 
 .project__header:hover .project__title{
@@ -433,6 +433,14 @@ h1, .hero__subtitle{
     border: 1px solid var(--clr-primary);
     text-decoration: none;
     color: var(--clr-primary);
+}
+
+.primary-color{
+    color: var(--clr-primary);
+}
+
+.about__text{
+    font-size: 1.5rem;
 }
 
 @keyframes preloader {
