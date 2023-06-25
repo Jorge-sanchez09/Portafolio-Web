@@ -443,6 +443,46 @@ h1, .hero__subtitle{
     font-size: 1.5rem;
 }
 
+.about__info{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about__images-container{
+    display: grid;
+    grid-template-columns: minmax(min-content, 350px) 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__social-links{
+    display: grid;
+    justify-items: center;
+    font-size: 1.5rem;
+    gap: 15px;
+}
+
+.link{
+    color: var(--clr-neutral-100);
+}
+
+.link:hover, .link:focus{
+    color: var(--clr-primary);
+    transform: translateY(-5px);
+}
+
+.about__contact{
+    text-align: center;
+}
+
+.about__location, .about__number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 @keyframes preloader {
     from{
         transform: rotate(0deg);
@@ -511,6 +551,25 @@ h2{
 
     .button{
         margin: 0;
+    }
+
+    .about__column-group{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        gap: 50px;
+    }
+
+    .about__text{
+        grid-column: span 3;
+    }
+
+    .about__info{
+        grid-column: span 2;
+    }
+
+    .about__location, .about__number{
+        justify-content: start;
     }
 
 }
