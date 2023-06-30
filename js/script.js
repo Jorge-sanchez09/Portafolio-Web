@@ -2,6 +2,7 @@ const toggleMenuElement = document.getElementById('toggle-button');
 const mainMenuElement = document.getElementById('menu-list');
 const navigationHeight = document.getElementById('nav-bar').offsetHeight;
 const projects = document.querySelectorAll('.project');
+const circularProgress = document.querySelectorAll('.skills__circular-bar');
 
 toggleMenuElement.addEventListener('click', ()=>{
     mainMenuElement.classList.toggle('menu-list--show');
@@ -21,3 +22,23 @@ for(const project of projects){
         }
     });
 }
+
+Array.from(circularProgress).forEach(circular => {
+    const circularProgressValue = getComputedStyle(circular)
+    .getPropertyValue('--skill-bar-length').replace('%', ''); 
+
+    let circularBarStartValue = 0, 
+    circularBarSpeed = 30;
+
+    let circularBarProgress = setInterval(() => {
+        circularBarStartValue++;
+
+        circular.style.background = ` conic-gradient(var(--clr-primary) ${circularBarStartValue}%, black 0deg)`;
+
+        if(circularBarStartValue >= circularProgressValue){
+            clearInterval(circularBarProgress);
+        }
+
+    }, circularBarSpeed);
+});
+

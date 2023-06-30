@@ -41,8 +41,8 @@
     <main>
         <section id="hero" class="hero">
             <picture>
-                <source srcset="assets/images/banner.jpg" media="(min-width: 830px)" class="hero__bg-image">
-                <img src="assets/images/banner-mobile.jpg" alt="Background Banner" class="hero__bg-image">
+                <source srcset="assets/images/banner.webp" media="(min-width: 830px)" class="hero__bg-image">
+                <img src="assets/images/banner-mobile.webp" alt="Background Banner" class="hero__bg-image">
             </picture>
             <div class="section-wrapper">
                 <div class="hero__columns-group">
@@ -435,7 +435,7 @@
                     </div>
                     <div class="about__info">
                         <div class="about__images-container">
-                            <img src="assets/images/user.png" alt="user avatar" class="about__avatar-img">
+                            <img src="assets/images/user.webp" alt="user avatar" class="about__avatar-img">
                             <div class="about__social-links">
                                 <a href="#" class="link">
                                     <i class="fa-brands fa-github"></i>
@@ -469,12 +469,13 @@
             <h2 class="section__title">Habilidades</h2>
             <div class="skills-list-container">
                 <div class="section-wrapper">
-                    <div class="skills">
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                    <h3>Lenguajes</h3>
+                    <div class="skills skills-languages">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <i class="fa-brands fa-html5"></i>
                             </div>
-                            <div class="skills__info skills__item--70">
+                            <div class="skills__info skills__progress--70">
                                 <p class="skills__tech">
                                     HTML
                                 </p>
@@ -487,11 +488,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <i class="fa-brands fa-css3-alt"></i>
                             </div>
-                            <div class="skills__info skills__item--60">
+                            <div class="skills__info skills__progress--60">
                                 <p class="skills__tech">
                                     CSS
                                 </p>
@@ -504,11 +505,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <i class="fa-brands fa-square-js"></i>
                             </div>
-                            <div class="skills__info skills__item--30">
+                            <div class="skills__info skills__progress--30">
                                 <p class="skills__tech">
                                     JavaScript
                                 </p>
@@ -521,11 +522,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <img src="assets/images/c-sharp-icon.svg" alt="C sharp icon">
                             </div>
-                            <div class="skills__info skills__item--80">
+                            <div class="skills__info skills__progress--80">
                                 <p class="skills__tech">
                                     C#
                                 </p>
@@ -538,11 +539,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <img src="assets/images/c-plus-icon.svg" alt="C plus plus icon">
                             </div>
-                            <div class="skills__info skills__item--50">
+                            <div class="skills__info skills__progress--50">
                                 <p class="skills__tech">
                                     C++
                                 </p>
@@ -555,11 +556,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills__item">
-                            <div class="skills__icon">
+                        <div class="skills__item skills__item--language">
+                            <div class="skills__icon skills__icon--language">
                                 <i class="fa-brands fa-python"></i>
                             </div>
-                            <div class="skills__info skills__item--30">
+                            <div class="skills__info skills__progress--25">
                                 <p class="skills__tech">
                                     Python
                                 </p>
@@ -573,25 +574,41 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <h3>Software</h3>
+                        <div class="skills skills-software">
+                            <div class="skills__item skills__item--software">
+                                <p class="skills__tech skills__tech--software">Unreal</p>
+                                <div class="skills__circular-bar skills__progress--25">
+                                    <div class="skills__icon skills__icon--software">
+                                        <img src="assets/images/unreal-icon.svg" alt="Unreal Engine icon">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item skills__item--software">
+                                <p class="skills__tech skills__tech--software">Unity</p>
+                                <div class="skills__circular-bar skills__progress--75">
+                                    <div class="skills__icon skills__icon--software">
+                                        <i class="fa-brands fa-unity"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item skills__item--software">
+                                <p class="skills__tech skills__tech--software">Visual Studio</p>
+                                <div class="skills__circular-bar skills__progress--50">
+                                    <div class="skills__icon skills__icon--software">
+                                        <img src="assets/images/visual-studio-icon.svg" alt="Visual Studio icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
            
          
         </section>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p> 
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
         <h2 id="contact">Contacto</h2>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
         <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
         <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
         <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
