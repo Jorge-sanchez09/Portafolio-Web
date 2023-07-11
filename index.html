@@ -68,7 +68,7 @@
         <section id="projects">
             <div class="section-wrapper">
                 <h2 class="section__title">Proyectos</h2>
-                <div class="projects-container">
+                <div id="projects-container" class="projects-container">
                     <article class="project">
                         <div class="project__header" tabindex="0">
                             <div class="project__image-container">
@@ -604,17 +604,35 @@
                         </div>
                     </div>
                 </div>
-            </div>
-           
-         
+            </div> 
         </section>
-        <h2 id="contact">Contacto</h2>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
-        <p class="relleno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit debitis reprehenderit vel in omnis, vitae corporis nemo aliquam asperiores provident nihil officia possimus minima perferendis aut? Quos, nemo modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ducimus quam aspernatur, impedit, rem voluptatem iste quidem voluptatibus dolore distinctio maiores adipisci enim eum est tenetur neque accusamus blanditiis?</p>
+        <section id="contact">
+            <div class="section-wrapper">
+                <h2 class="section__title">Contacto</h2>
+                <form action="#" id="form-contact" class="contact__form">
+                    <div class="form__flex-group">
+                        <div class="contact__group">
+                            <label for="name">Nombre</label>
+                            <input id="name" name="name" type="text" class="contact__input" required>
+                        </div>
+                        <div class="contact__group">
+                            <label for="email">Correo</label>
+                            <input id="email" name="email" type="email" class="contact__input" required>
+                        </div>
+                    </div>
+                    <div class="contact__group">
+                        <label for="subject">Asunto</label>
+                        <input id="subject" name="subject" type="text" class="contact__input" required>
+                    </div>
+                    <div class="contact__group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" class="contact__input" rows="7" required></textarea>
+                    </div>
+                    <button id="submit" type="submit" class="button">Enviar</button>
+                </form>
+            </div>
+        </section>
+       
     </main>
     <footer class="footer">
         <p>Pie de página</p>

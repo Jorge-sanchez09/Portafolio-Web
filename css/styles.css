@@ -26,6 +26,7 @@
     --clr-primary: hsl(214, 92%, 38%);   /*Color primario, con este color resaltamos lo importante*/
     --clr-primary-500: hsl(214, 92%, 28%);
 
+    --clr-neutral-600:  hsl(0, 0%, 20%);
     --clr-neutral-800:  hsl(0, 0%, 13%);
     --clr-neutral-900: hsl(0, 0%, 10%);
     --clr-neutral-200: hsl(0, 0%, 80%);
@@ -219,6 +220,8 @@ h1, .hero__subtitle{
     text-decoration: none;
     color: var(--clr-primary);
     border: 1px solid var(--clr-primary);
+    background-color: transparent;
+    cursor: pointer;
     overflow: hidden;
 }
 
@@ -283,6 +286,7 @@ h1, .hero__subtitle{
     text-align: center;
     text-decoration: overline;
     padding-block: 10px;
+    color: var(--clr-primary);
 }
 
 .projects-container{
@@ -325,7 +329,7 @@ h1, .hero__subtitle{
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5rem;
-    background-color: hsla(0, 0%, 13%, 0.5);
+    background-color: hsla(0, 0%, 13%, 0.65);
     transform: translateY(100%);
 }
 
@@ -492,7 +496,10 @@ h1, .hero__subtitle{
 
 .about__contact{
     margin-top: 10px;
-    text-align: center;
+}
+
+.about__contact p{
+    width: max-content;
 }
 
 .about__location, .about__number{
@@ -666,6 +673,40 @@ h1, .hero__subtitle{
     --skill-bar-length: 25%;
 }
 
+.contact__form label, .contact__form button{
+    font-size: 1.25rem;
+}
+
+.contact__form *{
+    margin: 0;    
+}
+
+.contact__group{
+    display: grid;
+    gap: 5px;
+    margin-bottom: 20px;
+    color: var(--clr-neutral-200);
+}
+
+.contact__input{
+    padding: 0.5em;
+    background-color: var(--clr-neutral-800);
+    color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-600);
+}
+
+textarea.contact__input{
+    resize: none;
+}
+
+.contact__input:focus{
+    outline: 1px solid var(--clr-primary);
+}
+
+.contact__form button{
+    padding: 0.5em 1.5em;
+}
+
 @keyframes preloader {
     from{
         transform: rotate(0deg);
@@ -685,10 +726,6 @@ h1, .hero__subtitle{
     font-size: 25px;
 }
 
-/* Borrar */
-h2{
-    color: var(--clr-primary);
-}
 
 .footer{
     background-color: var(--clr-neutral-800);
@@ -785,6 +822,19 @@ h2{
         grid-auto-flow: column;
     }
 
+    .contact__form{
+        font-size: 1.25rem;
+    }
+
+    .contact__group{
+        gap: 10px;
+    }
+
+    .form__flex-group{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 @media screen and (min-width: 1020px) {
