@@ -44,6 +44,8 @@
 
     --skill-bar-length: 0%; /*Tamaño de la barra de skills*/
     --circular-bar: 0deg;
+
+    --transition-delay: 0ms;
 }
 
 html{
@@ -145,11 +147,11 @@ main{
     margin-left: auto;
     margin-right: auto;
     padding: 2em;
+    overflow: hidden;
 }
 
 .hero{
     position: relative;
-    overflow: hidden;
 }
 
 .hero__bg-image{
@@ -289,6 +291,13 @@ h1, .hero__subtitle{
     color: var(--clr-primary);
 }
 
+.projects-section{
+    background-image: url('../assets/images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+}
+
 .projects-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -300,6 +309,12 @@ h1, .hero__subtitle{
     position: relative;
     overflow: hidden;
     border-radius: 0.5em;
+    /* Transicion */
+    opacity: 0;
+    transform: translateY(100%);
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-delay: var(--transition-delay);
 }
 
 .project * {
@@ -442,6 +457,11 @@ h1, .hero__subtitle{
     color: var(--clr-primary);
 }
 
+.project--show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .primary-color{
     color: var(--clr-primary);
 }
@@ -454,6 +474,7 @@ h1, .hero__subtitle{
     padding: 2em;
     border: 1px solid var(--clr-primary);
     border-radius: 1em;
+    overflow: hidden;
 }
 
 .about .section__title{
@@ -628,6 +649,9 @@ h1, .hero__subtitle{
     height: 100%;
     background-color: var(--clr-primary);
     transform: translateX(-100%);
+}
+
+.skills__bar-fill--animate{
     animation: skill-bar-fill 1s linear forwards;
 }
 
@@ -673,6 +697,25 @@ h1, .hero__subtitle{
     --skill-bar-length: 25%;
 }
 
+.contact{
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.contact::before{
+    content: '';
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-image: url('../assets/images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transform: rotateX(180deg);
+}
+
 .contact__form label, .contact__form button{
     font-size: 1.25rem;
 }
@@ -688,6 +731,10 @@ h1, .hero__subtitle{
     color: var(--clr-neutral-200);
 }
 
+.contact__form label{
+    font-weight: var(--fw-light);
+}
+
 .contact__input{
     padding: 0.5em;
     background-color: var(--clr-neutral-800);
@@ -701,10 +748,44 @@ textarea.contact__input{
 
 .contact__input:focus{
     outline: 1px solid var(--clr-primary);
+    box-shadow: 0px 0px 7px 2px var(--clr-primary);
 }
 
 .contact__form button{
     padding: 0.5em 1.5em;
+}
+
+.footer{
+    background-color: var(--clr-neutral-900);
+}
+
+/* Clases para animaciones */
+.fade{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.fade--left{
+    transform: translateX(-100%);
+}
+
+.fade--right{
+    transform: translateX(100%);
+}
+
+.fade--left-show{
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade--right-show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+    .fade--left, .fade--right{
+        transition: none;
+    }
 }
 
 @keyframes preloader {
@@ -722,14 +803,6 @@ textarea.contact__input{
     }
 }
 
-.relleno{
-    font-size: 25px;
-}
-
-
-.footer{
-    background-color: var(--clr-neutral-800);
-}
 
 @media screen and (min-width: 650px) {
      /* Al estar en una pantalla mas grande, el bg-color se lo damos al header ya que si se lo damos an mobile-first el color se queda en el espacio del menu y se ve raro, y una vez que la pantalla ya es mas grande para tener los links y el logo en la misma fila ya se lo asignamos o si no el bg-color solo lo tendria el logo*/
@@ -838,7 +911,15 @@ textarea.contact__input{
 }
 
 @media screen and (min-width: 1020px) {
+    .projects-section{
+        background-image: url('../assets/images/pattern-background-desktop.svg');
+    }
+
     .projects-container{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact::before{
+        background-image: url('../assets/images/pattern-background-desktop.svg');
     }
 }
