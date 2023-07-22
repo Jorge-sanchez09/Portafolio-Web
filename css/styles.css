@@ -720,6 +720,14 @@ h1, .hero__subtitle{
     font-size: 1.25rem;
 }
 
+.error{
+    padding: 0.25em;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: var(--fw-light);
+    background-color: hsl(4, 99%, 28%);
+}
+
 .contact__form *{
     margin: 0;    
 }
@@ -918,6 +926,7 @@ textarea.contact__input{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        align-items: start;
     }
 }
 

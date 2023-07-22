@@ -13,6 +13,15 @@ const skillsBars = document.querySelectorAll('.skills__bar-fill')
 // Barras circulares 
 const circularProgress = document.querySelectorAll('.skills__circular-bar');
 
+// Formulario
+const form = document.getElementById('form-contact');
+const emailObj = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+}
+
 document.documentElement.style.setProperty('--scroll-padding', navigationHeight + "px");
 
 toggleMenuElement.addEventListener('click', ()=>{
@@ -29,6 +38,62 @@ projectsDiv.addEventListener('click', (e) => {
        projectTitle.classList.toggle("project__title--fixed");
     }   
 });
+
+form.addEventListener('submit', validateForm);
+
+function validateForm(e){    
+    e.preventDefault();
+
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
+    
+    const formFields = [name, email, subject, message];
+    let inputContainer;
+
+    formFields.forEach(field => {
+        emailObj[field.name] = '';
+
+        field.value = field.value.trim();
+        inputContainer = field.parentElement;
+
+        if(field.value === '') {
+            showMessage('El campo no puede estar vacío', inputContainer);
+            return; 
+        }
+        else if(field.name === 'email' && !validateEmail(field.value)){
+            showMessage('Correo no válido', inputContainer);
+            return;
+        }
+
+        cleanMessage(inputContainer);
+        
+        emailObj[field.name] = field.value;     
+    });
+}
+
+function validateEmail(email){
+    const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/  // Expresion regular para validar el email
+    const resultado = regex.test(email);    // true o false dependiendo de si cumple con la expresion regular
+    return resultado;   
+}
+
+function showMessage(message, container){
+     cleanMessage(container);
+     const messageElement = document.createElement('p');
+     messageElement.textContent = message;
+     messageElement.className = 'error';
+    
+    container.append(messageElement);
+}
+
+function cleanMessage(container){
+    const messageElement = container.querySelector('.error');
+
+    if(messageElement)
+        messageElement.remove();
+}
 
 // Animaciones de las barras circulares
 let filled = false;
