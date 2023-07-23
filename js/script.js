@@ -95,6 +95,7 @@ function cleanMessage(container){
         messageElement.remove();
 }
 
+
 // Animaciones de las barras circulares
 let filled = false;
 function circularBarAnimation(){
