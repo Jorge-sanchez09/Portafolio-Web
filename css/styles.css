@@ -295,7 +295,7 @@ h1, .hero__subtitle{
     background-image: url('../assets/images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: contain;
+    background-size: 100%;
 }
 
 .projects-container{
@@ -712,7 +712,7 @@ h1, .hero__subtitle{
     background-image: url('../assets/images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-position: top left;
-    background-size: contain;
+    background-size: 100%;
     transform: rotateX(180deg);
 }
 
