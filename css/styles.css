@@ -515,15 +515,7 @@ h1, .hero__subtitle{
     transform: translateY(-5px);
 }
 
-.about__contact{
-    margin-top: 10px;
-}
-
-.about__contact p{
-    width: max-content;
-}
-
-.about__location, .about__number{
+.about__location{
     display: flex;
     align-items: center;
     justify-content: center;
